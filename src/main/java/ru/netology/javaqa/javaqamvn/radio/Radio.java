@@ -1,4 +1,5 @@
 package ru.netology.javaqa.javaqamvn.radio;
+
 public class Radio {
     private int currentVolume;
     private int numberStation;
@@ -6,6 +7,7 @@ public class Radio {
     public int getNumberStation() {
         return numberStation;
     }
+
     public void setNumberStation(int newNumberStation) {
         if (newNumberStation < 0) {
             return;
@@ -16,12 +18,11 @@ public class Radio {
         numberStation = newNumberStation;
     }
 
-    public void nextStation(){
+    public void nextStation() {
 
-        if (numberStation == 9){
+        if (numberStation == 9) {
             numberStation = 0;
-        }
-        else {
+        } else {
             numberStation = numberStation + 1;
             setNumberStation(numberStation);
         }
@@ -29,12 +30,11 @@ public class Radio {
 
     }
 
-    public void prevStation(){
+    public void prevStation() {
 
-        if (numberStation == 0){
+        if (numberStation == 0) {
             numberStation = 9;
-        }
-        else {
+        } else {
             numberStation = numberStation - 1;
         }
 
@@ -65,7 +65,6 @@ public class Radio {
             currentVolume = currentVolume - 1;
         }
     }
-
 
 
 }
