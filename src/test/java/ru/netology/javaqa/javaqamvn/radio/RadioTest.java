@@ -5,14 +5,14 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
 
-    Radio rad = new Radio(10);
+    Radio rad = new Radio(20);
 
     @Test
     public void shouldSelectStationHigher() {
 
-        rad.setNumberStation(rad.maxNumberStation+1);
+        rad.setNumberStation(rad.maxNumberStation + 1);
 
-        int expected = rad.minNumberStation;
+        int expected = 0;
         int actual = rad.getNumberStation();
 
         Assertions.assertEquals(expected, actual);
@@ -21,9 +21,9 @@ public class RadioTest {
     @Test
     public void shouldSelectStationBelow() {
 
-        rad.setNumberStation(rad.minNumberStation-1);
+        rad.setNumberStation(-1);
 
-        int expected = rad.minNumberStation;
+        int expected = 0;
         int actual = rad.getNumberStation();
 
         Assertions.assertEquals(expected, actual);
@@ -36,7 +36,7 @@ public class RadioTest {
 
         rad.nextStation();
 
-        int expected = rad.minNumberStation;
+        int expected = 0;
         int actual = rad.getNumberStation();
 
         Assertions.assertEquals(expected, actual);
@@ -46,7 +46,7 @@ public class RadioTest {
     @Test
     public void shouldSelectNextStation() {
 
-        rad.setNumberStation(rad.maxNumberStation-1);
+        rad.setNumberStation(rad.maxNumberStation - 1);
 
         rad.nextStation();
 
@@ -59,7 +59,7 @@ public class RadioTest {
     @Test
     public void shouldSelectPrevStation0() {
 
-        rad.setNumberStation(rad.minNumberStation);
+        rad.setNumberStation(0);
 
         rad.prevStation();
 
@@ -72,11 +72,11 @@ public class RadioTest {
     @Test
     public void shouldSelectPrevStation() {
 
-        rad.setNumberStation(rad.minNumberStation+1);
+        rad.setNumberStation(1);
 
         rad.prevStation();
 
-        int expected = rad.minNumberStation;
+        int expected = 0;
         int actual = rad.getNumberStation();
 
         Assertions.assertEquals(expected, actual);
