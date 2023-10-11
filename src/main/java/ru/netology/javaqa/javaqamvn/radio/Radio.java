@@ -13,14 +13,14 @@ public class Radio {
 
     public Radio(int numberOfStation) {
         maxNumberStation = numberOfStation - 1;
-         }
+    }
 
 
     public int getNumberStation() {
         return numberStation;
     }
 
-    public int getMaxNumberStation(){
+    public int getMaxNumberStation() {
         return maxNumberStation;
     }
 
