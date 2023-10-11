@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
 
-    Radio rad = new Radio(20);
+    Radio rad = new Radio();
 
     @Test
     public void shouldSelectStationHigher() {
 
-        rad.setNumberStation(rad.maxNumberStation + 1);
+        rad.setNumberStation(rad.getMaxNumberStation() + 1);
 
         int expected = 0;
         int actual = rad.getNumberStation();
@@ -32,7 +32,7 @@ public class RadioTest {
     @Test
     public void shouldSelectNextStationHigher() {
 
-        rad.setNumberStation(rad.maxNumberStation);
+        rad.setNumberStation(rad.getMaxNumberStation());
 
         rad.nextStation();
 
@@ -42,15 +42,14 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-
     @Test
     public void shouldSelectNextStation() {
 
-        rad.setNumberStation(rad.maxNumberStation - 1);
+        rad.setNumberStation(rad.getMaxNumberStation() - 1);
 
         rad.nextStation();
 
-        int expected = rad.maxNumberStation;
+        int expected = rad.getMaxNumberStation();
         int actual = rad.getNumberStation();
 
         Assertions.assertEquals(expected, actual);
@@ -63,7 +62,7 @@ public class RadioTest {
 
         rad.prevStation();
 
-        int expected = rad.maxNumberStation;
+        int expected = rad.getMaxNumberStation();
         int actual = rad.getNumberStation();
 
         Assertions.assertEquals(expected, actual);
@@ -103,7 +102,6 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
-
 
     @Test
     public void shouldIncreaseVolume99() {
